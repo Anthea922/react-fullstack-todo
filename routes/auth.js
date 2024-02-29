@@ -139,19 +139,18 @@ router.get("/current", requiresAuth, (req, res) => {
 
 module.exports = router;
 
-/*
 // @route   PUT /api/auth/logout
 // @desc    Logout user a clear the cookie
 // @access  Private
 router.put("/logout", requiresAuth, async (req, res) => {
-try {
-res.clearCookie("access-token");
+    try {
+        res.clearCookie("access-token");
 
-return res.json({ success: true });
-} catch (err) {
-console.log(err);
-return res.status(500).send(err.message);
-}
+        return res.json({ success: true });
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send(err.message);
+    }
 });
 
-module.exports = router;*/
+module.exports = router;

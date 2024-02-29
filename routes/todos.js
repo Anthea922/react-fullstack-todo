@@ -62,7 +62,7 @@ router.get("/current", requiresAuth, async (req, res) => {
   }
 });
 
-/*// @route   PUT /api/todos/:toDoId/complete
+// @route   PUT /api/todos/:toDoId/complete
 // @desc    Mark a todo as complete
 // @access  Private
 router.put("/:toDoId/complete", requiresAuth, async (req, res) => {
@@ -194,7 +194,7 @@ router.delete("/:toDoId", requiresAuth, async (req, res) => {
       return res.status(404).json({ error: "Could not find ToDo" });
     }
 
-    await ToDo.findOneAndRemove({
+    await ToDo.findOneAndDelete({
       user: req.user._id,
       _id: req.params.toDoId,
     });
@@ -204,6 +204,6 @@ router.delete("/:toDoId", requiresAuth, async (req, res) => {
     console.log(err);
     return res.status(500).send(err.message);
   }
-});*/
+});
 
 module.exports = router;
